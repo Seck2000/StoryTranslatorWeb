@@ -1,0 +1,138 @@
+{
+  "id": "lina-mer",
+  "title": "Une aventure sous la mer",
+  "title_ar": "مغامرة تحت البحر",
+  "thumbnail": "images/scene1.png",
+  "scenes": [
+    {
+      "id": 1,
+      "image": "images/scene1.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Lina est à la plage. Elle regarde la mer.",
+        "en": "Lina is at the beach. She looks at the sea.",
+        "ar": "لينا في الشاطئ. هي تنظر إلى البحر."
+      }
+    },
+    {
+      "id": 2,
+      "image": "images/scene2.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Lina met un masque. Elle veut nager.",
+        "en": "Lina puts on a mask. She wants to swim.",
+        "ar": "لينا تضع قناع السباحة. هي تريد السباحة."
+      }
+    },
+    {
+      "id": 3,
+      "image": "images/scene3.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Lina nage sous l’eau. L’eau est bleue.",
+        "en": "Lina swims under the water. The water is blue.",
+        "ar": "لينا تسبح تحت الماء. الماء أزرق."
+      }
+    },
+    {
+      "id": 4,
+      "image": "images/scene4.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Elle voit un poisson jaune. Le poisson est petit.",
+        "en": "She sees a yellow fish. The fish is small.",
+        "ar": "ترى سمكة صفراء. السمكة صغيرة."
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/scene5.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Elle voit une grande tortue verte. La tortue est lente.",
+        "en": "She sees a big green turtle. The turtle is slow.",
+        "ar": "ترى سلحفاة خضراء كبيرة. السلحفاة بطيئة."
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/scene6.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Lina voit une ombre. Elle a un peu peur.",
+        "en": "Lina sees a shadow. She is a little scared.",
+        "ar": "لينا ترى ظلاً. هي خائفة قليلاً."
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/scene7.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "C’est un requin. Mais il est gentil.",
+        "en": "It is a shark. But it is kind.",
+        "ar": "إنه قرش. لكنه لطيف."
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/scene8.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Lina aide une étoile de mer. Elle la met sur un rocher.",
+        "en": "Lina helps a starfish. She puts it on a rock.",
+        "ar": "لينا تساعد نجمة البحر. تضعها على صخرة."
+      }
+    },
+    {
+      "id": 9,
+      "image": "images/scene9.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Les poissons nagent autour d’elle. Elle est heureuse.",
+        "en": "The fish swim around her. She is happy.",
+        "ar": "الأسماك تسبح حولها. هي سعيدة."
+      }
+    },
+    {
+      "id": 10,
+      "image": "images/scene10.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Lina sort de l’eau. Elle aime la mer.",
+        "en": "Lina comes out of the water. She loves the sea.",
+        "ar": "لينا تخرج من الماء. هي تحب البحر."
+      }
+    }
+  ]
+}

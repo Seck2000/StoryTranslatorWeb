@@ -1,0 +1,138 @@
+{
+  "id": "lina-parc",
+  "title": "Une journée au parc",
+  "title_ar": "يوم في الحديقة",
+  "thumbnail": "images/scene1.png",
+  "scenes": [
+    {
+      "id": 1,
+      "image": "images/scene1.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Bonjour ! Je m’appelle Lina. Je vais au parc.",
+        "en": "Hello! My name is Lina. I am going to the park.",
+        "ar": "مرحباً! اسمي لينا. أنا ذاهبة إلى الحديقة."
+      }
+    },
+    {
+      "id": 2,
+      "image": "images/scene2.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Je vois un ballon rouge. Il est rouge.",
+        "en": "I see a red balloon. It is red.",
+        "ar": "أرى بالوناً أحمر. إنه أحمر."
+      }
+    },
+    {
+      "id": 3,
+      "image": "images/scene3.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Je vois le ciel bleu. Le ciel est bleu.",
+        "en": "I see the blue sky. The sky is blue.",
+        "ar": "أرى السماء الزرقاء. السماء زرقاء."
+      }
+    },
+    {
+      "id": 4,
+      "image": "images/scene4.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Je vois une fleur jaune. Elle est jaune.",
+        "en": "I see a yellow flower. It is yellow.",
+        "ar": "أرى زهرة صفراء. إنها صفراء."
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/scene5.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Je vois un petit chien blanc. Il est blanc.",
+        "en": "I see a small white dog. It is white.",
+        "ar": "أرى كلباً صغيراً أبيض. إنه أبيض."
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/scene6.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Le chien a faim. Je donne un biscuit.",
+        "en": "The dog is hungry. I give a biscuit.",
+        "ar": "الكلب جائع. أعطيه بسكويتاً."
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/scene7.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Nous jouons avec le ballon. C’est amusant !",
+        "en": "We play with the balloon. It is fun!",
+        "ar": "نلعب بالبالون. هذا ممتع!"
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/scene8.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Je compte : un, deux, trois fleurs.",
+        "en": "I count: one, two, three flowers.",
+        "ar": "أعدّ: واحدة، اثنتان، ثلاث زهور."
+      }
+    },
+    {
+      "id": 9,
+      "image": "images/scene9.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "C’est l’heure du pique-nique. Je mange une pomme.",
+        "en": "It is picnic time. I eat an apple.",
+        "ar": "حان وقت النزهة. آكل تفاحة."
+      }
+    },
+    {
+      "id": 10,
+      "image": "images/scene10.png",
+      "character": {
+        "name": "Lina",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Le soleil se couche. Au revoir, parc ! À demain.",
+        "en": "The sun is setting. Goodbye, park! See you tomorrow.",
+        "ar": "الشمس تغرب. وداعاً يا حديقة! أراكِ غداً."
+      }
+    }
+  ]
+}

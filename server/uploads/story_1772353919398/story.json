@@ -1,0 +1,138 @@
+{
+  "id": "sami-anniversaire",
+  "title": "L’anniversaire surprise",
+  "title_ar": "عيد ميلاد مفاجئ",
+  "thumbnail": "images/scene1.png",
+  "scenes": [
+    {
+      "id": 1,
+      "image": "images/scene1.png",
+      "character": {
+        "name": "Sami",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Aujourd’hui, c’est l’anniversaire de Sami. Sami a sept ans.",
+        "en": "Today is Sami’s birthday. Sami is seven years old.",
+        "ar": "اليوم عيد ميلاد سامي. سامي عمره سبع سنوات."
+      }
+    },
+    {
+      "id": 2,
+      "image": "images/scene2.png",
+      "character": {
+        "name": "Narrateur",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Maman et Papa ont un secret. C’est une surprise !",
+        "en": "Mom and Dad have a secret. It is a surprise!",
+        "ar": "ماما وبابا لديهما سر. إنها مفاجأة!"
+      }
+    },
+    {
+      "id": 3,
+      "image": "images/scene3.png",
+      "character": {
+        "name": "Narrateur",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Ils mettent des ballons rouges et jaunes. Ils accrochent des guirlandes.",
+        "en": "They put red and yellow balloons. They hang decorations.",
+        "ar": "يضعون بالونات حمراء وصفراء. يعلقون الزينة."
+      }
+    },
+    {
+      "id": 4,
+      "image": "images/scene4.png",
+      "character": {
+        "name": "Narrateur",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Maman prépare un grand gâteau au chocolat. Le gâteau est délicieux.",
+        "en": "Mom prepares a big chocolate cake. The cake is delicious.",
+        "ar": "ماما تحضر كعكة شوكولاتة كبيرة. الكعكة لذيذة."
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/scene5.png",
+      "character": {
+        "name": "Narrateur",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Les amis arrivent. Ils sont heureux.",
+        "en": "Friends arrive. They are happy.",
+        "ar": "الأصدقاء يصلون. هم سعداء."
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/scene6.png",
+      "character": {
+        "name": "Narrateur",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Tout le monde se cache. On attend Sami.",
+        "en": "Everyone hides. We wait for Sami.",
+        "ar": "الجميع يختبئ. ننتظر سامي."
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/scene7.png",
+      "character": {
+        "name": "Sami",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Sami entre dans la maison. Il ne comprend pas.",
+        "en": "Sami enters the house. He does not understand.",
+        "ar": "سامي يدخل البيت. هو لا يفهم."
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/scene8.png",
+      "character": {
+        "name": "Narrateur",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "SURPRISE ! Sami est surpris.",
+        "en": "SURPRISE! Sami is surprised.",
+        "ar": "مفاجأة! سامي متفاجئ."
+      }
+    },
+    {
+      "id": 9,
+      "image": "images/scene9.png",
+      "character": {
+        "name": "Sami",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Sami souffle les bougies. Il fait un vœu.",
+        "en": "Sami blows the candles. He makes a wish.",
+        "ar": "سامي يطفئ الشموع. يتمنى أمنية."
+      }
+    },
+    {
+      "id": 10,
+      "image": "images/scene10.png",
+      "character": {
+        "name": "Sami",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Sami est très heureux. C’est le plus beau jour !",
+        "en": "Sami is very happy. It is the best day!",
+        "ar": "سامي سعيد جداً. إنه أجمل يوم!"
+      }
+    }
+  ]
+}
