@@ -1,7 +1,10 @@
 // ==========================================
 // IMPORTATION DES MODULES
 // ==========================================
+require('dotenv').config();
+
 const express = require('express'); // Le framework principal pour créer le serveur web
+const { pool } = require('./db');
 const cors = require('cors'); // Autorise la communication entre notre client React et ce serveur
 const multer = require('multer'); // Outil pour gérer l'upload de fichiers (comme nos .zip)
 const path = require('path'); // Outil pour manipuler les chemins de dossiers facilement
@@ -10,7 +13,7 @@ const unzipper = require('unzipper'); // Module pour extraire le contenu des fic
 
 // Initialisation de l'application
 const app = express();
-const PORT = 3000; // Le port sur lequel le serveur va écouter
+const PORT = process.env.PORT || 3000;
 
 // ==========================================
 // CONFIGURATION (Middlewares)
@@ -34,6 +37,17 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 // ==========================================
 // ROUTES (Les portes d'entrée de notre serveur)
 // ==========================================
+
+// 0. Vérification de la connexion à PostgreSQL
+app.get('/api/health/db', async (req, res) => {
+    try {
+        await pool.query('SELECT 1');
+        res.json({ ok: true, database: 'connected' });
+    } catch (error) {
+        console.error('Erreur connexion base de données:', error);
+        res.status(500).json({ ok: false, database: 'error', message: error.message });
+    }
+});
 
 // 1. ROUTE POUR RÉCUPÉRER LA LISTE DES HISTOIRES (GET)
 app.get('/api/stories', (req, res) => {

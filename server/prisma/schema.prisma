@@ -1,0 +1,64 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  passwordHash String
+  displayName  String?
+  avatarUrl    String?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  progress    ReadingProgress[]
+  favorites   Favorite[]
+  history     ReadingHistory[]
+  preferences UserPreference?
+}
+
+model ReadingProgress {
+  id         String   @id @default(cuid())
+  userId     String
+  storyId    String
+  sceneIndex Int      @default(0)
+  updatedAt  DateTime @updatedAt
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, storyId])
+}
+
+model Favorite {
+  id        String   @id @default(cuid())
+  userId    String
+  storyId   String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([userId, storyId])
+}
+
+model ReadingHistory {
+  id        String   @id @default(cuid())
+  userId    String
+  storyId   String
+  eventType String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model UserPreference {
+  id          String @id @default(cuid())
+  userId      String @unique
+  defaultLang String @default("fr")
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
