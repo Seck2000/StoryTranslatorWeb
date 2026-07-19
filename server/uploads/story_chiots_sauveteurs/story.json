@@ -1,0 +1,113 @@
+{
+  "id": "chiots-sauveteurs",
+  "title": "Les Chiots Sauveteurs",
+  "title_ar": "الجراء المنقذون",
+  "ageCategory": "petits",
+  "thumbnail": "images/scene1.png",
+  "scenes": [
+    {
+      "id": 1,
+      "image": "images/scene1.png",
+      "character": {
+        "name": "Rocky",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Bonjour ! Je suis Rocky. Nous sommes les chiots sauveteurs.",
+        "en": "Hello! I am Rocky. We are the rescue pups.",
+        "ar": "مرحباً! أنا روكي. نحن الجراء المنقذون."
+      }
+    },
+    {
+      "id": 2,
+      "image": "images/scene2.png",
+      "character": {
+        "name": "Rocky",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Un ballon est perdu dans le parc. Nous partons en mission !",
+        "en": "A balloon is lost in the park. We go on a mission!",
+        "ar": "بالون ضائع في الحديقة. ننطلق في مهمة!"
+      }
+    },
+    {
+      "id": 3,
+      "image": "images/scene3.png",
+      "character": {
+        "name": "Skye",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Skye regarde le ciel bleu. Elle cherche le ballon.",
+        "en": "Skye looks at the blue sky. She looks for the balloon.",
+        "ar": "سكاي تنظر إلى السماء الزرقاء. تبحث عن البالون."
+      }
+    },
+    {
+      "id": 4,
+      "image": "images/scene4.png",
+      "character": {
+        "name": "Rocky",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Nous voyons une fleur jaune près du chemin.",
+        "en": "We see a yellow flower near the path.",
+        "ar": "نرى زهرة صفراء قرب الطريق."
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/scene5.png",
+      "character": {
+        "name": "Marshall",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Marshall trouve un petit chien triste. Il a perdu son jouet.",
+        "en": "Marshall finds a sad little dog. He lost his toy.",
+        "ar": "مارشال يجد كلباً صغيراً حزيناً. لقد فقد لعبته."
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/scene6.png",
+      "character": {
+        "name": "Rocky",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Nous partageons un biscuit. Tout le monde est content.",
+        "en": "We share a biscuit. Everyone is happy.",
+        "ar": "نشارك بسكويتة. الجميع سعداء."
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/scene7.png",
+      "character": {
+        "name": "Skye",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Le ballon est dans l’arbre ! Skye aide à le reprendre.",
+        "en": "The balloon is in the tree! Skye helps to get it back.",
+        "ar": "البالون على الشجرة! سكاي تساعد على استعادته."
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/scene8.png",
+      "character": {
+        "name": "Rocky",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Mission réussie ! Les chiots sauveteurs sont des héros.",
+        "en": "Mission complete! The rescue pups are heroes.",
+        "ar": "نجحت المهمة! الجراء المنقذون أبطال."
+      }
+    }
+  ]
+}

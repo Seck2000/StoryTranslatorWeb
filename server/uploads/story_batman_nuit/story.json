@@ -1,0 +1,113 @@
+{
+  "id": "batman-nuit",
+  "title": "Batman et la Nuit Courageuse",
+  "title_ar": "باتمان والليلة الشجاعة",
+  "ageCategory": "grands",
+  "thumbnail": "images/scene1.png",
+  "scenes": [
+    {
+      "id": 1,
+      "image": "images/scene1.png",
+      "character": {
+        "name": "Batman",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "La ville est calme. Batman veille depuis le toit.",
+        "en": "The city is quiet. Batman watches from the rooftop.",
+        "ar": "المدينة هادئة. باتمان يراقب من السطح."
+      }
+    },
+    {
+      "id": 2,
+      "image": "images/scene2.png",
+      "character": {
+        "name": "Batman",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Un signal apparaît dans le ciel. Quelqu’un a besoin d’aide.",
+        "en": "A signal appears in the sky. Someone needs help.",
+        "ar": "إشارة تظهر في السماء. شخص ما يحتاج إلى مساعدة."
+      }
+    },
+    {
+      "id": 3,
+      "image": "images/scene3.png",
+      "character": {
+        "name": "Robin",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Robin arrive. Ensemble, ils partent protéger les enfants.",
+        "en": "Robin arrives. Together, they go to protect the children.",
+        "ar": "يصل روبن. معاً يذهبان لحماية الأطفال."
+      }
+    },
+    {
+      "id": 4,
+      "image": "images/scene4.png",
+      "character": {
+        "name": "Batman",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Dans l’ombre, ils trouvent un chat perdu près du port.",
+        "en": "In the shadows, they find a lost cat near the harbor.",
+        "ar": "في الظل، يجدان قطة ضائعة قرب الميناء."
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/scene5.png",
+      "character": {
+        "name": "Batman",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Batman aide le chat. Le courage, c’est aussi être gentil.",
+        "en": "Batman helps the cat. Courage is also being kind.",
+        "ar": "باتمان يساعد القطة. الشجاعة تعني أيضاً أن تكون لطيفاً."
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/scene6.png",
+      "character": {
+        "name": "Robin",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Ils ramènent le chat à une petite fille. Elle sourit.",
+        "en": "They bring the cat back to a little girl. She smiles.",
+        "ar": "يعيدان القطة إلى فتاة صغيرة. تبتسم."
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/scene7.png",
+      "character": {
+        "name": "Batman",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "La nuit devient paisible. Batman et Robin rentrent.",
+        "en": "The night becomes peaceful. Batman and Robin head home.",
+        "ar": "تصبح الليلة هادئة. يعود باتمان وروبن إلى المنزل."
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/scene8.png",
+      "character": {
+        "name": "Batman",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Être un héros, c’est aider les autres. Fin de la mission.",
+        "en": "Being a hero means helping others. End of the mission.",
+        "ar": "أن تكون بطلاً يعني مساعدة الآخرين. نهاية المهمة."
+      }
+    }
+  ]
+}

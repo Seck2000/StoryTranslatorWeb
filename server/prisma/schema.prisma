@@ -8,13 +8,17 @@ datasource db {
 }
 
 model User {
-  id           String   @id @default(cuid())
-  email        String   @unique
+  id           String    @id @default(cuid())
+  email        String    @unique
   passwordHash String
+  firstName    String?
+  lastName     String?
   displayName  String?
   avatarUrl    String?
-  createdAt    DateTime @default(now())
-  updatedAt    DateTime @updatedAt
+  birthDate    DateTime?
+  role         String    @default("user")
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
 
   progress    ReadingProgress[]
   favorites   Favorite[]
@@ -56,9 +60,13 @@ model ReadingHistory {
 }
 
 model UserPreference {
-  id          String @id @default(cuid())
-  userId      String @unique
-  defaultLang String @default("fr")
+  id           String @id @default(cuid())
+  userId       String @unique
+  defaultLang  String @default("fr")
+  spokenLang   String @default("fr")
+  learningLang String @default("en")
+  level        String @default("debutant")
+  ageBand      String @default("moyens")
 
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 }

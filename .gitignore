@@ -2,3 +2,4 @@ node_modules/
 temp_uploads/
 .env
 server/.env
+coverage/

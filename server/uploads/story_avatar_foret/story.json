@@ -1,0 +1,113 @@
+{
+  "id": "avatar-foret",
+  "title": "Avatar : Les Enfants de la Forêt",
+  "title_ar": "أفاتار: أطفال الغابة",
+  "ageCategory": "grands",
+  "thumbnail": "images/scene3.png",
+  "scenes": [
+    {
+      "id": 1,
+      "image": "images/scene3.png",
+      "character": {
+        "name": "Ayo",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Ayo vit dans une forêt lumineuse pleine de couleurs.",
+        "en": "Ayo lives in a glowing forest full of colors.",
+        "ar": "أيو يعيش في غابة مضيئة مليئة بالألوان."
+      }
+    },
+    {
+      "id": 2,
+      "image": "images/scene4.png",
+      "character": {
+        "name": "Ayo",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Il écoute les arbres. La nature parle doucement.",
+        "en": "He listens to the trees. Nature speaks softly.",
+        "ar": "يستمع إلى الأشجار. الطبيعة تتحدث بهدوء."
+      }
+    },
+    {
+      "id": 3,
+      "image": "images/scene5.png",
+      "character": {
+        "name": "Lena",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Lena, sa sœur, découvre une rivière bleue magique.",
+        "en": "Lena, his sister, discovers a magical blue river.",
+        "ar": "لينا، أخته، تكتشف نهراً أزرق سحرياً."
+      }
+    },
+    {
+      "id": 4,
+      "image": "images/scene6.png",
+      "character": {
+        "name": "Ayo",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Ils aident un oiseau blessé à retrouver son nid.",
+        "en": "They help an injured bird find its nest again.",
+        "ar": "يساعدان طائراً مصاباً على العودة إلى عشه."
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/scene7.png",
+      "character": {
+        "name": "Lena",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "La forêt leur offre une lumière douce en remerciement.",
+        "en": "The forest gives them a gentle light as a thank-you.",
+        "ar": "تهديهما الغابة ضوءاً لطيفاً عرفاناً بالجميل."
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/scene8.png",
+      "character": {
+        "name": "Ayo",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Ayo apprend que protéger la planète, c’est être brave.",
+        "en": "Ayo learns that protecting the planet is being brave.",
+        "ar": "يتعلم أيو أن حماية الكوكب تعني أن تكون شجاعاً."
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/scene9.png",
+      "character": {
+        "name": "Lena",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Ensemble, ils promettent de soigner la forêt chaque jour.",
+        "en": "Together, they promise to care for the forest every day.",
+        "ar": "معاً يعدان بالعناية بالغابة كل يوم."
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/scene10.png",
+      "character": {
+        "name": "Ayo",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "La forêt brille. Les enfants de la forêt sont heureux.",
+        "en": "The forest shines. The children of the forest are happy.",
+        "ar": "تتألق الغابة. أطفال الغابة سعداء."
+      }
+    }
+  ]
+}

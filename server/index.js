@@ -10,6 +10,12 @@ const multer = require('multer'); // Outil pour gérer l'upload de fichiers (com
 const path = require('path'); // Outil pour manipuler les chemins de dossiers facilement
 const fs = require('fs'); // "File System", pour lire, créer ou supprimer des fichiers
 const unzipper = require('unzipper'); // Module pour extraire le contenu des fichiers .zip
+const authRoutes = require('./routes/auth');
+const libraryRoutes = require('./routes/library');
+const aiRoutes = require('./routes/ai');
+const speechRoutes = require('./routes/speech');
+const { authMiddleware, adminMiddleware } = require('./middleware/auth');
+const { storyMatchesAgeBand } = require('./utils/ageBands');
 
 // Initialisation de l'application
 const app = express();
@@ -38,6 +44,18 @@ if (!fs.existsSync(UPLOADS_DIR)) {
 // ROUTES (Les portes d'entrée de notre serveur)
 // ==========================================
 
+// Authentification (inscription, connexion, profil)
+app.use('/api/auth', authRoutes);
+
+// Données personnelles de lecture (progression, favoris, historique)
+app.use('/api/library', libraryRoutes);
+
+// Discussion IA en fin d'histoire
+app.use('/api/ai', aiRoutes);
+
+// Transcription vocale (Whisper)
+app.use('/api/speech', speechRoutes);
+
 // 0. Vérification de la connexion à PostgreSQL
 app.get('/api/health/db', async (req, res) => {
     try {
@@ -50,97 +68,112 @@ app.get('/api/health/db', async (req, res) => {
 });
 
 // 1. ROUTE POUR RÉCUPÉRER LA LISTE DES HISTOIRES (GET)
-app.get('/api/stories', (req, res) => {
-    // fs.readdir lit le contenu du dossier UPLOADS_DIR
-    fs.readdir(UPLOADS_DIR, { withFileTypes: true }, (err, entries) => {
+// Admin = toute la bibliothèque ; enfant = uniquement sa tranche d'âge
+app.get('/api/stories', authMiddleware, async (req, res) => {
+    fs.readdir(UPLOADS_DIR, { withFileTypes: true }, async (err, entries) => {
         if (err) {
-            // Si erreur de lecture, on renvoie une erreur au client
             return res.status(500).json({ error: 'Impossible de lire le dossier des histoires' });
         }
-        
-        // On ne garde que les dossiers (chaque dossier représente une histoire)
-        const storyFolders = entries.filter(dirent => dirent.isDirectory());
-        
-        // On parcourt chaque dossier pour lire son fichier story.json
+
+        const storyFolders = entries.filter(dirent => dirent.isDirectory() && dirent.name !== 'avatars');
+
         const storyList = storyFolders.map(folder => {
             const storyPath = path.join(UPLOADS_DIR, folder.name);
-            let metadata = { id: folder.name, title: folder.name, thumbnail: null }; // Valeurs par défaut
-            
+            let metadata = { id: folder.name, title: folder.name, thumbnail: null };
+
             let jsonPath = path.join(storyPath, 'story.json');
-            let rootDir = ''; // Sert à mémoriser si le json est dans un sous-dossier
-            
-            // Si story.json n'est pas à la racine, on regarde dans le premier sous-dossier
+            let rootDir = '';
+
             if (!fs.existsSync(jsonPath)) {
                 const subDirs = fs.readdirSync(storyPath).filter(f => fs.statSync(path.join(storyPath, f)).isDirectory());
                 if (subDirs.length > 0) {
                      jsonPath = path.join(storyPath, subDirs[0], 'story.json');
-                     rootDir = subDirs[0] + '/'; 
+                     rootDir = subDirs[0] + '/';
                 }
             }
 
-            // Si on a bien trouvé un fichier story.json, on le lit
-            if (fs.existsSync(jsonPath)) {
-                try {
-                    // On lit le fichier texte et on le transforme en objet JavaScript
-                    const data = JSON.parse(fs.readFileSync(jsonPath));
-                    const serverId = folder.name; 
-                    
-                    // On fusionne nos valeurs par défaut avec les données lues
-                    metadata = { ...metadata, ...data, id: serverId }; 
-                    
-                    // On ajuste le chemin de l'image de couverture pour le web
-                    if (metadata.thumbnail && !metadata.thumbnail.startsWith('http')) {
-                         metadata.thumbnail = `http://localhost:${PORT}/uploads/${serverId}/${rootDir}${metadata.thumbnail}`;
-                    }
-                    
-                    // On ajuste aussi les chemins de toutes les images des scènes et avatars
-                    if (metadata.scenes) {
-                        metadata.scenes = metadata.scenes.map(scene => ({
-                            ...scene,
-                            image: scene.image.startsWith('http') ? scene.image : `${rootDir}${scene.image}`,
-                            character: {
-                                ...scene.character,
-                                avatar: scene.character.avatar.startsWith('http') ? scene.character.avatar : `${rootDir}${scene.character.avatar}`
-                            }
-                        }));
-                    }
-                } catch (e) {
-                    console.error(`Erreur lecture story.json pour ${folder.name}`, e);
-                }
+            if (!fs.existsSync(jsonPath)) {
+                return null;
             }
-            return metadata; // On retourne l'histoire formatée
-        });
 
-        // On envoie la liste finale au client React
-        res.json(storyList);
+            try {
+                const data = JSON.parse(fs.readFileSync(jsonPath));
+                const serverId = folder.name;
+
+                if (!Array.isArray(data.scenes) || data.scenes.length === 0) {
+                    return null;
+                }
+
+                metadata = { ...metadata, ...data, id: serverId };
+
+                if (metadata.thumbnail && !metadata.thumbnail.startsWith('http')) {
+                    metadata.thumbnail = `http://localhost:${PORT}/uploads/${serverId}/${rootDir}${metadata.thumbnail}`;
+                }
+
+                metadata.scenes = metadata.scenes.map(scene => ({
+                    ...scene,
+                    image: scene.image?.startsWith('http') ? scene.image : `${rootDir}${scene.image || ''}`,
+                    character: {
+                        ...scene.character,
+                        avatar: scene.character?.avatar?.startsWith('http')
+                            ? scene.character.avatar
+                            : `${rootDir}${scene.character?.avatar || ''}`
+                    }
+                }));
+            } catch (e) {
+                console.error(`Erreur lecture story.json pour ${folder.name}`, e);
+                return null;
+            }
+            return metadata;
+        }).filter(Boolean);
+
+        try {
+            if (req.user.role === 'admin') {
+                return res.json(storyList);
+            }
+
+            const userResult = await pool.query(
+                `SELECT p."ageBand"
+                 FROM "User" u
+                 LEFT JOIN "UserPreference" p ON p."userId" = u.id
+                 WHERE u.id = $1`,
+                [req.user.id]
+            );
+            const bandId = userResult.rows[0]?.ageBand || null;
+
+            if (!bandId) {
+                return res.json([]);
+            }
+
+            const filtered = storyList.filter((story) => storyMatchesAgeBand(story, bandId));
+            return res.json(filtered);
+        } catch (filterError) {
+            console.error('Erreur filtrage histoires:', filterError);
+            return res.status(500).json({ error: 'Impossible de filtrer les histoires.' });
+        }
     });
 });
 
-// 2. ROUTE POUR IMPORTER UNE NOUVELLE HISTOIRE ZIP (POST)
-app.post('/api/upload', upload.single('file'), async (req, res) => {
-    // Si aucun fichier n'a été reçu, on bloque
+// 2. ROUTE POUR IMPORTER UNE NOUVELLE HISTOIRE ZIP (POST) — admin seulement
+app.post('/api/upload', authMiddleware, adminMiddleware, upload.single('file'), async (req, res) => {
     if (!req.file) {
         return res.status(400).json({ error: 'Aucun fichier envoyé' });
     }
 
-    const tempPath = req.file.path; // Chemin temporaire du zip
-    const storyId = `story_${Date.now()}`; // Création d'un nom de dossier unique avec la date
-    const targetDir = path.join(UPLOADS_DIR, storyId); // Le dossier final
+    const tempPath = req.file.path;
+    const storyId = `story_${Date.now()}`;
+    const targetDir = path.join(UPLOADS_DIR, storyId);
 
     try {
-        // Étape 1 : Extraire le contenu du .zip dans le dossier final
         await fs.createReadStream(tempPath)
             .pipe(unzipper.Extract({ path: targetDir }))
             .promise();
 
-        // Étape 2 : Supprimer le fichier .zip temporaire
         fs.unlinkSync(tempPath);
 
-        // Étape 3 : Vérifier que le zip contenait bien un fichier story.json
         let jsonPath = path.join(targetDir, 'story.json');
         let isValid = fs.existsSync(jsonPath);
 
-        // Recherche dans les sous-dossiers si non trouvé à la racine
         if (!isValid) {
             const subDirs = fs.readdirSync(targetDir).filter(f => fs.statSync(path.join(targetDir, f)).isDirectory());
             if (subDirs.length > 0) {
@@ -149,14 +182,11 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
             }
         }
 
-        // Si l'histoire n'est pas valide (pas de story.json)
         if (!isValid) {
-            // On supprime le dossier invalide pour nettoyer le serveur
             fs.rmSync(targetDir, { recursive: true, force: true });
             return res.status(400).json({ error: "Ce fichier n'est pas une histoire valide. Le fichier story.json est manquant." });
         }
-        
-        // Tout est bon, on prévient le client
+
         res.json({ success: true, message: 'Histoire importée avec succès', id: storyId });
     } catch (error) {
         console.error("Erreur lors de l'extraction", error);
@@ -167,6 +197,18 @@ app.post('/api/upload', upload.single('file'), async (req, res) => {
 // ==========================================
 // DÉMARRAGE DU SERVEUR
 // ==========================================
-app.listen(PORT, () => {
+const server = app.listen(PORT, () => {
     console.log(`Serveur backend démarré avec succès sur http://localhost:${PORT} !`);
+});
+
+server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+        console.error(
+            `Le port ${PORT} est déjà utilisé. Arrêtez l'autre processus Node, ou changez PORT dans .env.`
+        );
+        console.error(`Astuce Windows : netstat -ano | findstr :${PORT}`);
+    } else {
+        console.error('Erreur démarrage serveur:', err);
+    }
+    process.exit(1);
 });

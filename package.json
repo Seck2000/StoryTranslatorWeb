@@ -1,0 +1,16 @@
+{
+  "name": "storytranslator",
+  "private": true,
+  "version": "1.0.0",
+  "description": "StoryTranslator - racine du projet (tests unitaires et automatisés)",
+  "scripts": {
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@rollup/rollup-win32-arm64-msvc": "^4.62.2",
+    "@vitest/coverage-v8": "^3.0.0",
+    "vitest": "^3.0.0"
+  }
+}

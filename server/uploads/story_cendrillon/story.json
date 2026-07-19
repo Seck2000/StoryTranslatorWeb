@@ -1,0 +1,113 @@
+{
+  "id": "cendrillon",
+  "title": "Cendrillon",
+  "title_ar": "سندريلا",
+  "ageCategory": "moyens",
+  "thumbnail": "images/scene1.png",
+  "scenes": [
+    {
+      "id": 1,
+      "image": "images/scene1.png",
+      "character": {
+        "name": "Cendrillon",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Il était une fois une douce fille nommée Cendrillon.",
+        "en": "Once upon a time, there was a kind girl named Cinderella.",
+        "ar": "كان يا مكان فتاة لطيفة اسمها سندريلا."
+      }
+    },
+    {
+      "id": 2,
+      "image": "images/scene2.png",
+      "character": {
+        "name": "Cendrillon",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Elle rêve d’aller au bal du château ce soir.",
+        "en": "She dreams of going to the castle ball tonight.",
+        "ar": "تحلم بالذهاب إلى حفل القصر هذه الليلة."
+      }
+    },
+    {
+      "id": 3,
+      "image": "images/scene3.png",
+      "character": {
+        "name": "Fée",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Une fée apparaît. Elle transforme une citrouille en carrosse.",
+        "en": "A fairy appears. She turns a pumpkin into a coach.",
+        "ar": "تظهر جنية. تحول يقطينة إلى عربة."
+      }
+    },
+    {
+      "id": 4,
+      "image": "images/scene4.png",
+      "character": {
+        "name": "Cendrillon",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Cendrillon porte une belle robe et des souliers de verre.",
+        "en": "Cinderella wears a beautiful dress and glass slippers.",
+        "ar": "ترتدي سندريلا فستاناً جميلاً وحذاءً من زجاج."
+      }
+    },
+    {
+      "id": 5,
+      "image": "images/scene5.png",
+      "character": {
+        "name": "Prince",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Au bal, le prince danse avec elle. Ils sont heureux.",
+        "en": "At the ball, the prince dances with her. They are happy.",
+        "ar": "في الحفل، يرقص الأمير معها. هما سعيدان."
+      }
+    },
+    {
+      "id": 6,
+      "image": "images/scene6.png",
+      "character": {
+        "name": "Cendrillon",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "À minuit, elle doit partir. Un soulier reste derrière elle.",
+        "en": "At midnight, she must leave. One slipper stays behind.",
+        "ar": "عند منتصف الليل، يجب أن تغادر. يبقى حذاء واحد."
+      }
+    },
+    {
+      "id": 7,
+      "image": "images/scene7.png",
+      "character": {
+        "name": "Prince",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Le prince cherche la propriétaire du joli soulier.",
+        "en": "The prince looks for the owner of the lovely slipper.",
+        "ar": "يبحث الأمير عن صاحبة الحذاء الجميل."
+      }
+    },
+    {
+      "id": 8,
+      "image": "images/scene8.png",
+      "character": {
+        "name": "Cendrillon",
+        "avatar": "images/scene1.png"
+      },
+      "text": {
+        "fr": "Le soulier lui va parfaitement. Cendrillon est heureuse pour toujours.",
+        "en": "The slipper fits perfectly. Cinderella is happy forever.",
+        "ar": "الحذاء يناسبها تماماً. تعيش سندريلا سعيدة إلى الأبد."
+      }
+    }
+  ]
+}
