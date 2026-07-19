@@ -90,7 +90,4 @@ StoryTranslatorWeb/
   .github/         # CI GitHub Actions
 ```
 
-## Rapport LaTeX
 
-Voir le dossier [`rapport/`](rapport/) (`main.tex`, `includes.tex`, `titlepage.tex`).  
-Sur Overleaf : uploader ces fichiers (+ logo `uqar.png` si disponible) et compiler en PdfLaTeX.
