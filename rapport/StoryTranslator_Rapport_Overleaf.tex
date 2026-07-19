@@ -23,38 +23,73 @@
 \usepackage{amsmath,amssymb}
 \usepackage{csquotes}
 
-\newcommand{\reporttitle}{{\huge \textsc{Rapport} \\ \vspace{0.5cm} {\Large Projet de fin d'\'etudes}}}
+\newcommand{\reporttitle}{{\huge \textsc{Rapport} \\ \vspace{0.5cm} {\Large Projet de fin d'\'etudes --- StoryTranslator}}}
 \newcommand{\reportauthorOne}{Aissatou Seck}
+\newcommand{\reportauthorTwo}{}
+\newcommand{\reportauthorThree}{}
 \newcommand{\reportProfessor}{Yacine Yaddaden, Ph. D.}
-\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\reporttype}{Coursework}
 
 \begin{document}
 
-%-------------------- PAGE DE TITRE --------------------
+% Last modification: 2016-09-29 (Marc Deisenroth)
+% Modification for UW: 2017-05-22 (jphickey)
 \begin{titlepage}
-\begin{center}
-{\Large UNIVERSIT\'E DU QU\'EBEC \`A RIMOUSKI}\\[0.4cm]
-\textsc{\large D\'epartement de math\'ematiques, d'informatique et de g\'enie}\\[0.8cm]
 
-\textbf{\textsc{\Large PROJET DE FIN D'ETUDES EN INFORMATIQUE\\ \vspace{0.3cm} INF39615-7T}}\\[1.0cm]
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
 
-\HRule \\[0.4cm]
-{ \huge \bfseries \reporttitle}\\[0.2cm]
-{\Large StoryTranslator}\\[0.2cm]
+
+%----------------------------------------------------------------------------------------
+%	LOGO SECTION
+%----------------------------------------------------------------------------------------
+
+
+
+\begin{center} % Center remainder of the page
+
+%----------------------------------------------------------------------------------------
+%	HEADING SECTIONS
+%----------------------------------------------------------------------------------------
+
+\includegraphics[width=7cm]{uqar}\\[1.5cm]
+\textbf{\textsc{\Large PROJET DE FIN D'ETUDES EN INFORMAT\\ \vspace{0.5cm} INF39615-7T}}\\[1.0cm]
+\textsc{\Large Universit\'e du Qu\'ebec \`a Rimouski}\\[0.5cm]
+\textsc{\large D\'epartement de math\'ematiques, d'informatique et de g\'enie}\\[0.95cm]
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION
+%----------------------------------------------------------------------------------------
+
+\HRule \\ % [0.4cm]
+{ \huge \bfseries \reporttitle}\\ % Title of your document
 \HRule \\[1.5cm]
 \end{center}
+%----------------------------------------------------------------------------------------
+%	AUTHOR SECTION
+%----------------------------------------------------------------------------------------
 
+%\begin{minipage}{0.4\hsize}
 \begin{flushleft} \large
 \textit{\textsc{\textbf{\'Equipe :}}}\\
-\reportauthorOne \\[0.5cm]
+\reportauthorOne \\ %~(Matricule: \cidOne)\\ %
+% \reportauthorTwo \\
+% \reportauthorThree \\
+\vspace{0.5cm}
 \textit{\textsc{\textbf{Professeur :}}}\\
 \reportProfessor
 \end{flushleft}
-
+% \vspace{3.5cm}
 \vfill
 \makeatletter
 Date: \@date
+
+% \vfill % Fill the rest of the page with whitespace
+
+
+
 \makeatother
+
+
 \end{titlepage}
 
 \tableofcontents
