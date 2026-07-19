@@ -1,42 +1,31 @@
-# Rapport LaTeX — StoryTranslator (INF39615)
+# Rapport LaTeX — format officiel du cours
 
-## Solution la plus simple (recommandée sur Overleaf)
+Structure identique au mod\`ele du professeur :
 
-Utilise **un seul fichier** : `StoryTranslator_Rapport_Overleaf.tex`
+```
+main.tex              ← document principal (comme le template du cours)
+includes.tex          ← packages
+titlepage.tex         ← page de titre officielle
+report_v1.0.bib       ← bibliographie
+uqar.png (ou .jpg)    ← logo (à uploader)
+```
 
-1. Sur Overleaf : **Nouveau projet > Projet vide**
-2. Supprime le `main.tex` par défaut (ou vide-le)
-3. Uploade **uniquement** `StoryTranslator_Rapport_Overleaf.tex`
-4. Menu Overleaf (en haut à gauche) > **Document principal** > choisis ce fichier
-5. Compilateur : **PdfLaTeX** > Recompiler
+## Sur Overleaf
 
-Ne mets **pas** le contenu de ce fichier dans `titlepage.tex` ni dans `includes.tex`.
+1. Nouveau projet **vide**
+2. Uploader **ces 4 fichiers** + le logo `uqar.png` (ou `uqar.jpg`)
+3. Menu → **Document principal** → `main.tex`
+4. Compilateur : **PdfLaTeX**
+5. Recompiler **2 à 3 fois** (pour la biblio / table des matières)
 
-## Si tu utilises 3 fichiers (`main.tex` + `includes` + `titlepage`)
+**Important :**
+- Ne colle **pas** tout le rapport dans `titlepage.tex`
+- `titlepage.tex` = seulement la page de titre
+- `includes.tex` = seulement les packages (celui du dépôt, pas un autre)
 
-Sur Overleaf, chaque fichier doit contenir **exactement** :
+## Contenu déjà rempli
 
-| Fichier | Contenu attendu |
-|---------|-----------------|
-| `main.tex` | `\documentclass` + `\newcommand` auteurs + `\input{includes}` + corps |
-| `includes.tex` | seulement les `\usepackage{...}` (pas de `\documentclass`) |
-| `titlepage.tex` | seulement `\begin{titlepage}...\end{titlepage}` (pas de `\documentclass`) |
-
-Document principal = `main.tex`.
-
-### Erreurs typiques
-
-- `Can be used only in preamble` + `\documentclass` dans `titlepage.tex`  
-  → tu as collé tout le rapport dans `titlepage.tex`. Remplace-le par le petit `titlepage.tex` du dépôt.
-
-- `Command \reporttitle already defined` / `TeX capacity exceeded`  
-  → boucle d'includes (fichiers mélangés). Utilise plutôt le fichier unique.
-
-## Fichiers du dossier
-
-| Fichier | Rôle |
-|---------|------|
-| `StoryTranslator_Rapport_Overleaf.tex` | **Tout-en-un** pour Overleaf |
-| `main.tex` | Document principal (version multi-fichiers) |
-| `includes.tex` | Packages |
-| `titlepage.tex` | Page de titre seule |
+- Auteure : Aissatou Seck
+- Professeur : Yacine Yaddaden, Ph. D.
+- Titre : Projet de fin d'études — StoryTranslator
+- Sections du rapport PFE + lien GitHub

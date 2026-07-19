@@ -1,21 +1,34 @@
 \documentclass[12pt,twoside,letterpaper]{article}
+%NOTE: This report format is
 
-\newcommand{\reporttitle}{{\huge \textsc{Rapport} \\ \vspace{0.5cm} {\Large Projet de fin d'\'etudes}}}
+\newcommand{\reporttitle}{{\huge \textsc{Rapport} \\ \vspace{0.5cm} {\Large Projet de fin d'\'etudes --- StoryTranslator}}}
 
 \newcommand{\reportauthorOne}{Aissatou Seck}
 \newcommand{\reportauthorTwo}{}
 \newcommand{\reportauthorThree}{}
+% \newcommand{\cidOne}{your id number}
 \newcommand{\reportProfessor}{Yacine Yaddaden, Ph. D.}
+% \newcommand{\cidTwo}{your id number}
 \newcommand{\reporttype}{Coursework}
 \bibliographystyle{plain}
 
-\input{includes}
+% include files that load packages and define macros
+\input{includes} % various packages needed for maths etc.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{document}
+% front page
 \input{titlepage}
 
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%% table of content
+%If a table of content is needed, simply uncomment the following lines
 \tableofcontents
 \newpage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%% Main document
 
 %========================================================
 \section{Introduction}
@@ -36,7 +49,7 @@ pour devenir une plateforme plus compl\`ete :
 cr\'eation de comptes utilisateurs, sauvegarde des donn\'ees en base,
 espace administrateur, interface selon la langue maternelle,
 et quiz de compr\'ehension assist\'e par l'intelligence artificielle,
-avec un mode oral fond\'e sur Whisper.
+avec un mode oral fond\'e sur Whisper \cite{whisper2022}.
 
 Le code source du projet est disponible \`a l'adresse suivante :
 \url{https://github.com/Seck2000/StoryTranslatorWeb}.
@@ -140,7 +153,7 @@ La progression est sauvegard\'ee en base de donn\'ees pour l'utilisateur connect
 
 \subsection{Quiz de fin d'histoire avec l'IA}
 
-\`A la fin d'une histoire, l'enfant peut discuter avec une IA (Gemini).
+\`A la fin d'une histoire, l'enfant peut discuter avec une IA (Gemini) \cite{gemini}.
 Le tuteur :
 \begin{itemize}[leftmargin=*]
   \item pose des questions uniquement sur le contenu de l'histoire ;
@@ -158,7 +171,7 @@ En mode Parler :
   \item l'IA lit sa question \`a voix haute ;
   \item l'enfant enregistre sa r\'eponse au micro ;
   \item l'audio est envoy\'e au serveur ;
-  \item \textbf{Whisper} (OpenAI) transcrit la voix mot pour mot ;
+  \item \textbf{Whisper} (OpenAI) transcrit la voix mot pour mot \cite{whisper2022} ;
   \item le texte est transmis \`a l'IA pour correction et suite du quiz.
 \end{enumerate}
 
@@ -180,7 +193,7 @@ Dans les listes de langues, chaque langue appara\^it dans sa forme native
 
 \subsection{Front-end (Interface Client)}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{React.js} : construction de l'interface.
+  \item \textbf{React.js} : construction de l'interface \cite{react}.
   \item \textbf{Vite} : outil de d\'eveloppement et de compilation.
   \item \textbf{Tailwind CSS} : mise en forme responsive.
   \item \textbf{Axios} : communication HTTP avec l'API.
@@ -191,7 +204,7 @@ Dans les listes de langues, chaque langue appara\^it dans sa forme native
 
 \subsection{Back-end (Serveur)}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Node.js} et \textbf{Express} : API REST.
+  \item \textbf{Node.js} et \textbf{Express} : API REST \cite{express}.
   \item \textbf{Multer} / \textbf{Unzipper} : import ZIP.
   \item \textbf{CORS} : autorisation des appels client $\leftrightarrow$ serveur.
   \item \textbf{JWT} et \textbf{bcrypt} : authentification et mots de passe.
@@ -205,8 +218,8 @@ Dans les listes de langues, chaque langue appara\^it dans sa forme native
 
 \subsection{Intelligence artificielle et reconnaissance vocale}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Gemini} : quiz conversationnel et correction linguistique.
-  \item \textbf{Whisper (OpenAI)} : transcription orale litt\'erale.
+  \item \textbf{Gemini} : quiz conversationnel et correction linguistique \cite{gemini}.
+  \item \textbf{Whisper (OpenAI)} : transcription orale litt\'erale \cite{whisper2022}.
 \end{itemize}
 
 \subsection{Qualit\'e et tests}
@@ -365,28 +378,6 @@ Ce projet m'a permis de consolider :
 \end{itemize}
 
 \newpage
-
-\begin{thebibliography}{99}
-\bibitem{whisper2022}
-Alec Radford et al.
-\newblock Robust Speech Recognition via Large-Scale Weak Supervision.
-\newblock \emph{arXiv:2212.04356}, 2022.
-\newblock \url{https://openai.com/research/whisper}.
-
-\bibitem{gemini}
-Google.
-\newblock Gemini API.
-\newblock \url{https://ai.google.dev/}, 2024.
-
-\bibitem{react}
-Meta.
-\newblock React Documentation.
-\newblock \url{https://react.dev/}, 2024.
-
-\bibitem{express}
-OpenJS Foundation.
-\newblock Express Documentation.
-\newblock \url{https://expressjs.com/}, 2024.
-\end{thebibliography}
+\bibliography{report_v1.0}
 
 \end{document}
