@@ -86,7 +86,6 @@ StoryTranslatorWeb/
   client/          # React + Vite
   server/          # Express + Prisma
   tests/           # Tests unitaires
-  rapport/         # Rapport LaTeX (PFE)
   .github/         # CI GitHub Actions
 ```
 

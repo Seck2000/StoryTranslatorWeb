@@ -4,5 +4,4 @@ temp_uploads/
 server/.env
 coverage/
 *.log
-rapport/*.log
 server/uploads/avatars/
