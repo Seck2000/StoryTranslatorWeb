@@ -34,28 +34,20 @@
 \section{Introduction}
 %========================================================
 
-Ce rapport pr\'esente la poursuite du projet \textbf{StoryTranslator},
-une application web destin\'ee \`a aider les enfants \`a apprendre une langue
-par la lecture d'histoires illustr\'ees.
+\textbf{StoryTranslator} est une application web qui aide les enfants \`a apprendre
+une langue en lisant des histoires illustr\'ees.
+Une premi\`ere version, r\'ealis\'ee en INF34615-7T, permettait d\'ej\`a la lecture
+multilingue, la synth\`ese vocale et la sauvegarde de la progression.
 
-Une premi\`ere version avait \'et\'e r\'ealis\'ee dans le cadre du cours
-Projet en informatique II (INF34615-7T).
-Elle permettait d\'ej\`a de lire des histoires en plusieurs langues,
-d'\'ecouter le texte \`a voix haute et de sauvegarder la progression
-dans le navigateur.
+Ce rapport porte sur la continuation du projet en INF39615-7T.
+L'objectif \'etait d'ajouter les comptes utilisateurs, la persistance en base de donn\'ees,
+un espace administrateur, une interface adapt\'ee \`a la langue maternelle,
+ainsi qu'un quiz p\'edagogique avec intelligence artificielle et reconnaissance vocale.
 
-Dans le cadre du projet de fin d'\'etudes (INF39615-7T), l'application a \'et\'e enrichie
-pour devenir une plateforme plus compl\`ete :
-cr\'eation de comptes utilisateurs, sauvegarde des donn\'ees en base,
-espace administrateur, interface selon la langue maternelle,
-et quiz de compr\'ehension assist\'e par l'intelligence artificielle,
-avec un mode oral fond\'e sur Whisper \cite{whisper2022}.
-
-Le code source du projet est disponible \`a l'adresse suivante :
+Le code source est disponible ici :
 \url{https://github.com/Seck2000/StoryTranslatorWeb}.
-
-Ce document d\'ecrit le fonctionnement du site, les technologies utilis\'ees,
-puis les \'el\'ements techniques utiles \`a la maintenance et \`a l'\'evolution du projet.
+Les sections suivantes pr\'esentent le fonctionnement du site,
+les technologies utilis\'ees et les \'el\'ements techniques utiles \`a sa maintenance.
 
 \newpage
 
@@ -71,7 +63,7 @@ ou se connecter.
 pr\'enom, nom, courriel, langue maternelle, langue cible, niveau,
 tranche d'\^age et mot de passe.
 
-Les mots de passe sont hach\'es (bcrypt) et les sessions s'appuient sur des jetons JWT.
+Les mots de passe sont hach\'es (bcrypt) et les sessions s'appuient sur des jetons JWT \cite{rfc7519}.
 Deux r\^oles existent : \texttt{user} et \texttt{admin}.
 
 \subsection{Page d'accueil : La Biblioth\`eque}
@@ -134,7 +126,7 @@ Un contr\^ole permet de changer la langue d'affichage du texte de l'histoire.
 Lorsque l'arabe est s\'electionn\'e, le texte peut s'afficher de droite \`a gauche (RTL).
 
 \subsubsection{Contr\^oles Audio}
-Le site utilise la synth\`ese vocale du navigateur (\texttt{SpeechSynthesis})
+Le site utilise la synth\`ese vocale du navigateur (\texttt{SpeechSynthesis}) \cite{webspeech}
 pour lire le texte \`a voix haute :
 \begin{itemize}[leftmargin=*]
   \item lecture automatique \`a chaque changement de sc\`ene (activable / d\'esactivable) ;
@@ -165,18 +157,15 @@ Le tuteur :
 
 \subsection{Mode oral et transcription Whisper}
 
-Le quiz propose un mode \textbf{\'Ecrire} et un mode \textbf{Parler}.
-En mode Parler :
-\begin{enumerate}[leftmargin=*]
-  \item l'IA lit sa question \`a voix haute ;
-  \item l'enfant enregistre sa r\'eponse au micro ;
-  \item l'audio est envoy\'e au serveur ;
-  \item \textbf{Whisper} (OpenAI) transcrit la voix mot pour mot \cite{whisper2022} ;
-  \item le texte est transmis \`a l'IA pour correction et suite du quiz.
-\end{enumerate}
+En plus du mode texte, le quiz propose un mode oral.
+L'enfant \'ecoute la question de l'IA, puis r\'epond au micro.
+L'enregistrement est envoy\'e au serveur, o\`u \textbf{Whisper} (OpenAI)
+produit une transcription litt\'erale de ce qui a \'et\'e dit \cite{whisper2022}.
+Ce texte est ensuite transmis \`a l'IA, qui peut corriger la langue
+et poursuivre le quiz.
 
-Cette fid\'elit\'e de transcription est essentielle :
-l'IA doit voir les vraies erreurs pour pouvoir les corriger.
+La transcription doit rester fid\`ele \`a la r\'eponse de l'enfant :
+sans cela, l'IA ne pourrait pas rep\'erer ni corriger les vraies erreurs.
 
 \subsection{Interface multilingue (langue maternelle)}
 
@@ -194,38 +183,38 @@ Dans les listes de langues, chaque langue appara\^it dans sa forme native
 \subsection{Front-end (Interface Client)}
 \begin{itemize}[leftmargin=*]
   \item \textbf{React.js} : construction de l'interface \cite{react}.
-  \item \textbf{Vite} : outil de d\'eveloppement et de compilation.
-  \item \textbf{Tailwind CSS} : mise en forme responsive.
+  \item \textbf{Vite} : outil de d\'eveloppement et de compilation \cite{vite}.
+  \item \textbf{Tailwind CSS} : mise en forme responsive \cite{tailwind}.
   \item \textbf{Axios} : communication HTTP avec l'API.
   \item \textbf{Lucide-react} : ic\^ones.
-  \item \textbf{Web Speech API} : synth\`ese vocale.
-  \item \textbf{MediaRecorder} : enregistrement audio pour Whisper.
+  \item \textbf{Web Speech API} : synth\`ese vocale \cite{webspeech}.
+  \item \textbf{MediaRecorder} : enregistrement audio pour Whisper \cite{mediarecorder}.
 \end{itemize}
 
 \subsection{Back-end (Serveur)}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Node.js} et \textbf{Express} : API REST \cite{express}.
+  \item \textbf{Node.js} et \textbf{Express} : API REST \cite{nodejs,express}.
   \item \textbf{Multer} / \textbf{Unzipper} : import ZIP.
   \item \textbf{CORS} : autorisation des appels client $\leftrightarrow$ serveur.
-  \item \textbf{JWT} et \textbf{bcrypt} : authentification et mots de passe.
+  \item \textbf{JWT} et \textbf{bcrypt} : authentification et mots de passe \cite{rfc7519}.
 \end{itemize}
 
 \subsection{Base de donn\'ees et authentification}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{PostgreSQL} : persistance des comptes, favoris, progression, historique et pr\'ef\'erences.
-  \item \textbf{Prisma} : sch\'ema et migrations.
+  \item \textbf{PostgreSQL} : persistance des comptes, favoris, progression, historique et pr\'ef\'erences \cite{postgresql}.
+  \item \textbf{Prisma} : sch\'ema et migrations \cite{prisma}.
 \end{itemize}
 
 \subsection{Intelligence artificielle et reconnaissance vocale}
 \begin{itemize}[leftmargin=*]
   \item \textbf{Gemini} : quiz conversationnel et correction linguistique \cite{gemini}.
-  \item \textbf{Whisper (OpenAI)} : transcription orale litt\'erale \cite{whisper2022}.
+  \item \textbf{Whisper (OpenAI)} : transcription orale litt\'erale \cite{whisper2022,openai-whisper-api}.
 \end{itemize}
 
 \subsection{Qualit\'e et tests}
 \begin{itemize}[leftmargin=*]
-  \item \textbf{Vitest} : tests unitaires du projet.
-  \item \textbf{GitHub Actions} : int\'egration continue (CI).
+  \item \textbf{Vitest} : tests unitaires du projet \cite{vitest}.
+  \item \textbf{GitHub Actions} : int\'egration continue (CI) \cite{github-actions}.
   \`A chaque \texttt{push} ou \texttt{pull request},
   les tests sont ex\'ecut\'es automatiquement pour d\'etecter les erreurs rapidement.
   Il n'y a pas de d\'eploiement automatique (pas de CD).
@@ -378,6 +367,8 @@ Ce projet m'a permis de consolider :
 \end{itemize}
 
 \newpage
+\section*{R\'ef\'erences}
+\addcontentsline{toc}{section}{R\'ef\'erences}
 \bibliography{report_v1.0}
 
 \end{document}

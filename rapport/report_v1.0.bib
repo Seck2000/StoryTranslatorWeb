@@ -1,28 +1,132 @@
-@article{whisper2022,
-  author  = {Radford, Alec and Kim, Jong Wook and Xu, Tao and Brockman, Greg and McLeavey, Christine and Sutskever, Ilya},
-  title   = {Robust Speech Recognition via Large-Scale Weak Supervision},
-  journal = {arXiv preprint arXiv:2212.04356},
-  year    = {2022},
-  url     = {https://openai.com/research/whisper}
+%==============================================================================
+% Bibliographie — StoryTranslator (INF39615)
+% Sources officielles et articles en lien avec le projet
+%==============================================================================
+
+@misc{whisper2022,
+  author       = {Radford, Alec and Kim, Jong Wook and Xu, Tao and Brockman, Greg and McLeavey, Christine and Sutskever, Ilya},
+  title        = {Robust Speech Recognition via Large-Scale Weak Supervision},
+  year         = {2022},
+  eprint       = {2212.04356},
+  archivePrefix= {arXiv},
+  primaryClass = {eess.AS},
+  note         = {Mod\`ele Whisper (OpenAI) utilis\'e pour la transcription orale},
+  url          = {https://arxiv.org/abs/2212.04356}
+}
+
+@misc{openai-whisper-api,
+  author       = {{OpenAI}},
+  title        = {Speech to text --- Whisper API},
+  year         = {2024},
+  howpublished = {\url{https://platform.openai.com/docs/guides/speech-to-text}},
+  note         = {Documentation de l'API de transcription utilis\'ee côté serveur}
 }
 
 @misc{gemini,
   author       = {{Google}},
-  title        = {Gemini API},
+  title        = {Gemini API Documentation},
   year         = {2024},
-  howpublished = {\url{https://ai.google.dev/}}
+  howpublished = {\url{https://ai.google.dev/gemini-api/docs}},
+  note         = {API utilis\'ee pour le quiz conversationnel et la correction linguistique}
 }
 
 @misc{react,
   author       = {{Meta}},
   title        = {React Documentation},
   year         = {2024},
-  howpublished = {\url{https://react.dev/}}
+  howpublished = {\url{https://react.dev/}},
+  note         = {Biblioth\`eque front-end du client StoryTranslator}
+}
+
+@misc{vite,
+  author       = {{VoidZero Inc. and Vite contributors}},
+  title        = {Vite Documentation},
+  year         = {2024},
+  howpublished = {\url{https://vite.dev/}},
+  note         = {Outil de d\'eveloppement et de build du client}
 }
 
 @misc{express,
   author       = {{OpenJS Foundation}},
-  title        = {Express Documentation},
+  title        = {Express --- Fast, unopinionated, minimalist web framework for Node.js},
   year         = {2024},
-  howpublished = {\url{https://expressjs.com/}}
+  howpublished = {\url{https://expressjs.com/}},
+  note         = {Framework utilis\'e pour l'API REST du serveur}
+}
+
+@misc{nodejs,
+  author       = {{OpenJS Foundation}},
+  title        = {Node.js Documentation},
+  year         = {2024},
+  howpublished = {\url{https://nodejs.org/docs/latest/api/}},
+  note         = {Environnement d'ex\'ecution JavaScript côté serveur}
+}
+
+@misc{postgresql,
+  author       = {{The PostgreSQL Global Development Group}},
+  title        = {PostgreSQL Documentation},
+  year         = {2024},
+  howpublished = {\url{https://www.postgresql.org/docs/current/}},
+  note         = {Base de donn\'ees relationnelle du projet}
+}
+
+@misc{prisma,
+  author       = {{Prisma Data, Inc.}},
+  title        = {Prisma Documentation},
+  year         = {2024},
+  howpublished = {\url{https://www.prisma.io/docs}},
+  note         = {ORM et migrations utilis\'es avec PostgreSQL}
+}
+
+@techreport{rfc7519,
+  author      = {Jones, Michael and Bradley, John and Sakimura, Nat},
+  title       = {JSON Web Token ({JWT})},
+  institution = {IETF},
+  type        = {RFC},
+  number      = {7519},
+  year        = {2015},
+  month       = may,
+  doi         = {10.17487/RFC7519},
+  url         = {https://www.rfc-editor.org/rfc/rfc7519},
+  note        = {Jetons utilis\'es pour l'authentification des utilisateurs}
+}
+
+@misc{webspeech,
+  author       = {{Mozilla Developer Network}},
+  title        = {Web Speech API},
+  year         = {2024},
+  howpublished = {\url{https://developer.mozilla.org/en-US/docs/Web/API/Web_Speech_API}},
+  note         = {Synth\`ese vocale du navigateur (SpeechSynthesis)}
+}
+
+@misc{mediarecorder,
+  author       = {{Mozilla Developer Network}},
+  title        = {MediaRecorder API},
+  year         = {2024},
+  howpublished = {\url{https://developer.mozilla.org/en-US/docs/Web/API/MediaRecorder}},
+  note         = {Enregistrement audio du micro pour le mode oral}
+}
+
+@misc{vitest,
+  author       = {{VoidZero Inc. and Vitest contributors}},
+  title        = {Vitest Documentation},
+  year         = {2024},
+  howpublished = {\url{https://vitest.dev/}},
+  note         = {Framework de tests unitaires du projet}
+}
+
+@misc{github-actions,
+  author       = {{GitHub}},
+  title        = {GitHub Actions Documentation},
+  year         = {2024},
+  howpublished = {\url{https://docs.github.com/en/actions}},
+  note         = {Int\'egration continue (CI) ex\'ecutant les tests automatiquement}
+}
+
+@misc{tailwind,
+  author       = {{Tailwind Labs}},
+  title        = {Tailwind CSS Documentation},
+  year         = {2024},
+  howpublished = {\url{https://tailwindcss.com/docs}},
+  note         = {Framework CSS utilis\'e pour l'interface}
 }
