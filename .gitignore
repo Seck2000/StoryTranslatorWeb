@@ -3,3 +3,6 @@ temp_uploads/
 .env
 server/.env
 coverage/
+*.log
+rapport/*.log
+server/uploads/avatars/
